@@ -8,7 +8,10 @@ module.exports = {
     extend: {
       fontFamily: {
         cursive: ["cursive"],
-      }
+      },
+      colors: {
+        "theme-bg": "#0a4b51",
+      },
     },
   },
   plugins: [],
