@@ -18,6 +18,25 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
           return node.id !== "download-btn";
         },
       });
+
+      // Try Web Share API first (for mobile)
+      if (navigator.share) {
+        const blob = await (await fetch(dataUrl)).blob();
+        const file = new File([blob], `ayat-emas-${name}.png`, {
+          type: blob.type,
+        });
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: "Ayat Emas",
+            text: `Ayat Emas untuk ${name}`,
+            files: [file],
+          });
+          return;
+        }
+      }
+
+      // Fallback to download
       const link = document.createElement("a");
       link.download = `ayat-emas-${name}.png`;
       link.href = dataUrl;
@@ -45,8 +64,8 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
           className="rounded-lg p-2 px-4 bg-white/10 border-2 border-white hover:bg-white hover:text-[#0a4b51] transition-all duration-300 flex items-center justify-center space-x-2"
           onClick={screenshotHandler}
         >
-          <i className="fa fa-download" aria-hidden="true"></i>
-          <p>Download</p>
+          <i className="fa fa-share-alt" aria-hidden="true"></i>
+          <p>Simpan / Bagikan</p>
         </button>
       </div>
       <div className="flex flex-col items-center justify-center text-center font-cursive text-xl max-w-[70%]">
