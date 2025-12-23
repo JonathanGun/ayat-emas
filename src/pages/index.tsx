@@ -7,6 +7,8 @@ import Layout from "../components/Layout";
 import NameInput from "../components/NameInput";
 import ScriptureDisplay from "../components/ScriptureDisplay";
 import Footer from "../components/Footer";
+import logo from "../images/logo.jpeg";
+import { Seo } from "../components/Seo";
 
 const scriptures: Scripture[] = scripturesData;
 
@@ -25,7 +27,12 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <div>
+      <div className="flex flex-col items-center justify-center space-y-6">
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+        />
         {name ? (
           <ScriptureDisplay name={name} scripture={currentScripture} />
         ) : (
@@ -40,11 +47,10 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <>
+  <Seo>
     <script
       src="https://kit.fontawesome.com/24dd8c965e.js"
       crossOrigin="anonymous"
     ></script>
-    <title>Ayat Emas</title>
-  </>
+  </Seo>
 );

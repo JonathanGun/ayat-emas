@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "develop": "NODE_OPTIONS='--no-deprecation' gatsby develop",
+    "start": "NODE_OPTIONS='--no-deprecation' gatsby develop",
+    "build": "NODE_OPTIONS='--no-deprecation' gatsby build",
+    "serve": "NODE_OPTIONS='--no-deprecation' gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
   },
@@ -19,7 +19,10 @@
     "autoprefixer": "^10.4.23",
     "gatsby": "^5.15.0",
     "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-manifest": "^5.15.0",
     "gatsby-plugin-postcss": "^6.15.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-sitemap": "^6.15.0",
     "html-to-image": "^1.11.13",
     "postcss": "^8.5.6",
     "react": "^18.3.1",
