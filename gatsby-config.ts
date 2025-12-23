@@ -34,6 +34,10 @@ const config: GatsbyConfig = {
         icon: `src/images/logo.jpeg`,
       },
     },
+    "gatsby-plugin-offline",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-omni-font-loader`,
       options: {

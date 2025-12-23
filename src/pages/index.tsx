@@ -1,5 +1,6 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
+import logo from "../images/logo.jpeg";
 import scripturesData from "../static/scriptures.json";
 import { Scripture } from "../types";
 import { hashStringToIndex } from "../utils";
@@ -7,7 +8,6 @@ import Layout from "../components/Layout";
 import NameInput from "../components/NameInput";
 import ScriptureDisplay from "../components/ScriptureDisplay";
 import Footer from "../components/Footer";
-import logo from "../images/logo.jpeg";
 import { Seo } from "../components/Seo";
 
 const scriptures: Scripture[] = scripturesData;

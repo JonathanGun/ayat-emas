@@ -7,6 +7,10 @@ interface ScriptureDisplayProps {
   scripture: Scripture;
 }
 
+const SHARE_TITLE = "Ayat Emas - JKI Puri Marina Semarang";
+const SHARE_TEXT = "Ini ayat emasku tahun ini, yuk cek ayat emasmu juga!";
+const SHARE_URL = "https://ayat-emas-jpm.vercel.app/";
+
 const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) => {
   const screenshotHandler = async () => {
     const node = document.getElementById("shareable-content");
@@ -28,8 +32,8 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
 
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           await navigator.share({
-            title: "Ayat Emas",
-            text: `Ayat Emas untuk ${name}`,
+            title: SHARE_TITLE,
+            text: `${SHARE_TEXT}\n${SHARE_URL}`,
             files: [file],
           });
           return;
@@ -68,7 +72,7 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
           <p>Simpan / Bagikan</p>
         </button>
       </div>
-      <div className="flex flex-col items-center justify-center text-center font-cursive text-xl max-w-[70%]">
+      <div className="flex flex-col items-center justify-center text-center font-cursive text-xl leading-relaxed max-w-[80%]">
         <p>Merry Christmas &</p>
         <p>Happy New Year</p>
       </div>
