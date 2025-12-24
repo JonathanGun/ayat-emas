@@ -59,7 +59,7 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
         <p className="text-lg">Ini Ayat emasmu :</p>
       </div>
       <div
-        className="max-w-[80%] min-h-72 flex flex-col items-center justify-center text-center space-y-2 border-4 p-6"
+        className="max-w-[80%] min-h-72 flex flex-col items-center justify-center text-center space-y-2 border-4 p-6 bg-black/50"
         style={{
           borderImage: "linear-gradient(to bottom right, #C0C0C0, #FFD700) 1",
         }}
