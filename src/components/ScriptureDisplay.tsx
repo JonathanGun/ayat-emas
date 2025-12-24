@@ -58,19 +58,14 @@ const ScriptureDisplay: React.FC<ScriptureDisplayProps> = ({ name, scripture }) 
         </p>
         <p className="text-lg">Ini Ayat emasmu :</p>
       </div>
-      <div
-        className="max-w-[80%] min-h-72 flex flex-col items-center justify-center text-center space-y-2 border-4 p-6 bg-black/50"
-        style={{
-          borderImage: "linear-gradient(to bottom right, #C0C0C0, #FFD700) 1",
-        }}
-      >
+      <div className="max-w-[80%] min-h-72 flex flex-col items-center justify-center text-center space-y-2 border-4 border-[#FFF8DC] p-6 bg-black/50">
         <p className="text-xl">{scripture.verse}</p>
         <p className="text-md">{scripture.text}</p>
       </div>
       <div className="flex flex-col items-center justify-center space-y-4">
         <button
           id="download-btn"
-          className="rounded-lg p-2 px-4 bg-white/10 border-2 border-white hover:bg-white hover:text-[#ffffff] transition-all duration-300 flex items-center justify-center space-x-2"
+          className="rounded-lg p-2 px-4 bg-white/10 border-2 border-white transition-all duration-300 flex items-center justify-center space-x-2"
           onClick={screenshotHandler}
         >
           <i className="fa fa-share-alt" aria-hidden="true"></i>
