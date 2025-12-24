@@ -31,7 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <img
           src={logo}
           alt="Logo"
-          className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
+          className="w-24 h-24 rounded-full border-4 border-gray-200 shadow-lg object-cover"
         />
         {name ? (
           <ScriptureDisplay name={name} scripture={currentScripture} />

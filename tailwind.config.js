@@ -10,7 +10,7 @@ module.exports = {
         cursive: ["cursive"],
       },
       colors: {
-        "theme-bg": "#0a4b51",
+        "theme-bg": "#222222",
       },
     },
   },
